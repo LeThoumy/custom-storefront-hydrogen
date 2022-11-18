@@ -1,3 +1,47 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 @font-face {
 	font-family: garnett;
 	src: url('/fonts/Garnett/Garnett-Light.otf');
@@ -26,6 +70,15 @@
 body {
 	font-family: freizeit120;
 }
+h2 {
+	font-size: clamp(2rem, 1.5455rem + 1.2121vw, 3rem);
+	font-size: var(--fsz-xl);
+	font-weight: 500;
+}
+h3 {
+	font-size: clamp(1.125rem, 0.9545rem + 0.4545vw, 1.5rem);
+	font-size: var(--fsz-md);
+}
 :root {
 	/* -------------------------------------------------------------------------- */
 	/*                                 Typography                                 */
@@ -36,7 +89,7 @@ body {
 	--fsz-lg: clamp(1.5rem, 1.2727rem + 0.6061vw, 2rem);/* 24px to 32px */
 	--fsz-xl: clamp(2rem, 1.5455rem + 1.2121vw, 3rem);/* 32px to 48px */
 	--fsz-2xl: clamp(3rem, 2.5455rem + 1.2121vw, 4rem);/* 48px to 64px */
-	--fsz-3xl: clamp(4rem, 3.0909rem + 2.4242vw, 6rem)/* 64px to 96px */
+	--fsz-3xl: clamp(4rem, 3.0909rem + 2.4242vw, 6rem);/* 64px to 96px */
 	/* -------------------------------------------------------------------------- */
 	/*                                   Spacing                                  */
 	/* -------------------------------------------------------------------------- */
@@ -50,9 +103,13 @@ body {
 	--space-2xl: 40px;
 	--space-3xl: 64px;
 }
+/* Add antialiasing to the font of the body */
 body {
-	background-color: #f5f5f5;
+	background-color: #121212;
+	color: #fefefe;
 	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 header {
 	display: flex;
@@ -65,24 +122,52 @@ header {
 	padding: var(--space-xl);
 	background-color: #fbbc03;
 }
+header > a {
+		font-family: garnett;
+		color: #fff;
+		text-decoration: none;
+		font-size: 18px;
+		font-weight: 500;
+	}
 .aboveFold {
 	height: 100vh;
-	padding: 16px;
-	padding: var(--space-md);
+	padding: 40px;
+	padding: var(--space-2xl);
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 }
 .aboveFold > h1 {
-		margin: auto;
-		font-size: clamp(3rem, 2.5455rem + 1.2121vw, 4rem);
-		font-size: var(--fsz-2xl);
+		font-size: clamp(4rem, 3.0909rem + 2.4242vw, 6rem);
+		font-size: var(--fsz-3xl);
 		font-weight: 500;
 	}
 @media (max-width: 600px) {
 .aboveFold > h1 {
-			font-size: clamp(2rem, 1.5455rem + 1.2121vw, 3rem);
-			font-size: var(--fsz-xl);
+			font-size: clamp(3rem, 2.5455rem + 1.2121vw, 4rem);
+			font-size: var(--fsz-2xl);
 	}
 		}
+.featured-products--section{
+	padding: 40px;
+	padding: var(--space-2xl);
+}
+.featured-products--section h2 {
+		margin-bottom: 64px;
+		margin-bottom: var(--space-3xl);
+	}
+.featured-products--section > .featured-products--wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 40px;
+		grid-gap: 40px;
+		grid-gap: var(--space-2xl);
+		gap: var(--space-2xl);
+	}
+.featured-products--section > .featured-products--wrapper > .featured-products--card > img {
+				margin-bottom: 16px;
+				margin-bottom: var(--space-md);
+				width: 100%;
+				height: auto;
+			}

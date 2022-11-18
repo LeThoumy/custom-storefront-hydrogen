@@ -1,3 +1,4 @@
+import FeaturedCollections from "../components/FeaturedCollections";
 import { Layout } from "../components/Layout.server"
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
       <section className="aboveFold">
         <h1>A quality desk tailored to your needs right at your fingertips.</h1>
       </section>
+      <FeaturedCollections />
     </Layout>
   );
 }

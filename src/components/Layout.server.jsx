@@ -25,7 +25,7 @@ export function Layout({ children }) {
 			<div className="layoutWrapper">
 				<header>
 					<Link className="logoName" to="/">{shop.name}</Link>
-					<a href="#mainContent">See Products</a>
+					<a href="#mainContent">See Products → </a>
 				</header>
 
 				<main role="main" id="mainContent">
