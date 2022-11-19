@@ -1,0 +1,10 @@
+.hero_description {
+	min-height: 30vh;
+	display: flex;
+	align-items: center;
+}
+.headline {
+	width: 20ch;
+	max-width: 100%;
+	font-weight: 500;
+}

@@ -5,65 +5,26 @@
 @custom-media --viewport-mobile (width <= 600px);
 /* Add antialiasing to the font of the body */
 body {
-	background-color: #121212;
-	color: #fefefe;
+	background-color: #f0f1ea;
+	color: #121212;
 	margin: 0;
+	padding: var(--space-3xl);
+	margin-bottom: 100px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-header {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
 
-	padding: var(--space-xl);
-	background-color: #fbbc03;
-
-	& > a {
-		font-family: garnett;
-		color: #fff;
-		text-decoration: none;
-		font-size: 18px;
-		font-weight: 500;
+	@media (--viewport-mobile) {
+		padding: var(--space-xl);
 	}
 }
-
 
 .aboveFold {
-	height: 100vh;
-	padding: var(--space-2xl);
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-
-	& > h1 {
-		font-size: var(--fsz-3xl);
-		font-weight: 500;
-		@media (--viewport-mobile) {
-			font-size: var(--fsz-2xl);
-		}
-	}
-}
-.featured-products--section{
-	padding: var(--space-2xl);
-
-	& h2 {
-		margin-bottom: var(--space-3xl);
-	}
-	& > .featured-products--wrapper {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: var(--space-2xl);
-
-		& > .featured-products--card {
-
-			& > img {
-				margin-bottom: var(--space-md);
-				width: 100%;
-				height: auto;
-			}
-		}
-	}
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: var(--space-xl);
+		font-weight: 600;
+		text-align: center;
 }

@@ -1,9 +1,12 @@
 import { useShopQuery, CacheLong, gql, useUrl, Link, Seo } from "@shopify/hydrogen";
+import { Suspense } from "react";
+import Navbar from "./Navbar.server";
+
 
 
 export function Layout({ children }) {
 	const { pathname } = useUrl();
-	const isHome = pathname === "/";
+	/* const isHome = pathname === "/"; */
 
 	const {
 		data: { shop },
@@ -15,21 +18,19 @@ export function Layout({ children }) {
 
 	return (
 		<>
-			<Seo
-				type="defaultSeo"
-				data={{
-					title: shop.name,
-					description: shop.description,
-				}}
-			/>
-			<div className="layoutWrapper">
-				<header>
-					<Link className="logoName" to="/">{shop.name}</Link>
-					<a href="#mainContent">See Products → </a>
-				</header>
-
+			<Suspense>
+				<Seo
+					type="defaultSeo"
+					data={{
+						title: shop.name,
+						description: shop.description,
+					}}
+				/>
+			</Suspense>
+			<div>
+				<Navbar />
 				<main role="main" id="mainContent">
-					{children}
+					<Suspense>{children}</Suspense>
 				</main>
 			</div>
 		</>

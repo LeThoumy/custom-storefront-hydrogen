@@ -42,6 +42,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+img {
+	width: 100%;
+	height: auto;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
 @font-face {
 	font-family: garnett;
 	src: url('/fonts/Garnett/Garnett-Light.otf');
@@ -67,17 +75,63 @@ table {
 	src: url('/fonts/Freizeit/Freizeit120-Regular.otf');
 	font-weight: 400;
 }
+@font-face {
+	font-family: freizeit120;
+	src: url('/fonts/Freizeit/Freizeit120-Medium.otf');
+	font-weight: 500;
+}
 body {
 	font-family: freizeit120;
 }
+h1 {
+	font-size: clamp(4rem, 3.0909rem + 2.4242vw, 6rem);
+	font-size: var(--fsz-3xl);
+		font-weight: 500;
+}
+@media (max-width: 600px) {
+h1 {
+			font-size: clamp(3rem, 2.5455rem + 1.2121vw, 4rem);
+			font-size: var(--fsz-2xl);
+}
+		}
 h2 {
+	font-size: clamp(3rem, 2.5455rem + 1.2121vw, 4rem);
+	font-size: var(--fsz-2xl);
+		font-weight: 500;
+}
+@media (max-width: 600px) {
+h2 {
+			font-size: clamp(2rem, 1.5455rem + 1.2121vw, 3rem);
+			font-size: var(--fsz-xl);
+}
+		}
+h3 {
 	font-size: clamp(2rem, 1.5455rem + 1.2121vw, 3rem);
 	font-size: var(--fsz-xl);
-	font-weight: 500;
+		font-weight: 500;
+		font-weight: 400;
 }
+@media (max-width: 600px) {
 h3 {
-	font-size: clamp(1.125rem, 0.9545rem + 0.4545vw, 1.5rem);
-	font-size: var(--fsz-md);
+			font-size: clamp(1.5rem, 1.2727rem + 0.6061vw, 2rem);
+			font-size: var(--fsz-lg);
+}
+		}
+h4 {
+	font-size: clamp(1.5rem, 1.2727rem + 0.6061vw, 2rem);
+	font-size: var(--fsz-lg);
+	font-weight: 400;
+}
+@media (max-width: 600px) {
+h4 {
+			font-size: clamp(1.125rem, 0.9545rem + 0.4545vw, 1.5rem);
+			font-size: var(--fsz-md);
+}
+		}
+strong {
+	color: rgb(251, 173, 0);
+	color: color(display-p3 0.95358 0.68394 0.00000);
+	color: var(--yellow80);
 }
 :root {
 	/* -------------------------------------------------------------------------- */
@@ -102,72 +156,51 @@ h3 {
 	--space-xl: 24px;
 	--space-2xl: 40px;
 	--space-3xl: 64px;
+	/* ---------------------------------- Color --------------------------------- */
+	--yellow20: rgb(36, 17, 0);
+	--yellow80: rgb(251, 173, 0);
+	--yellow98: rgb(255, 245, 205);
+}
+@supports (color: color(display-p3 0 0 0)) {
+:root {
+	--yellow20: color(display-p3 0.13463 0.06925 0.00000);
+}
+}
+@supports (color: color(display-p3 0 0 0)) {
+:root {
+	--yellow80: color(display-p3 0.95358 0.68394 0.00000);
+}
+}
+@supports (color: color(display-p3 0 0 0)) {
+:root {
+	--yellow98: color(display-p3 1.00000 0.96294 0.80480);
+}
 }
 /* Add antialiasing to the font of the body */
 body {
-	background-color: #121212;
-	color: #fefefe;
+	background-color: #f0f1ea;
+	color: #121212;
 	margin: 0;
+	padding: 64px;
+	padding: var(--space-3xl);
+	margin-bottom: 100px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-header {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-
-	padding: 24px;
-
-	padding: var(--space-xl);
-	background-color: #fbbc03;
+@media (max-width: 600px) {
+body {
+		padding: 24px;
+		padding: var(--space-xl);
 }
-header > a {
-		font-family: garnett;
-		color: #fff;
-		text-decoration: none;
-		font-size: 18px;
-		font-weight: 500;
 	}
 .aboveFold {
-	height: 100vh;
-	padding: 40px;
-	padding: var(--space-2xl);
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 24px;
+		gap: var(--space-xl);
+		font-weight: 600;
+		text-align: center;
 }
-.aboveFold > h1 {
-		font-size: clamp(4rem, 3.0909rem + 2.4242vw, 6rem);
-		font-size: var(--fsz-3xl);
-		font-weight: 500;
-	}
-@media (max-width: 600px) {
-.aboveFold > h1 {
-			font-size: clamp(3rem, 2.5455rem + 1.2121vw, 4rem);
-			font-size: var(--fsz-2xl);
-	}
-		}
-.featured-products--section{
-	padding: 40px;
-	padding: var(--space-2xl);
-}
-.featured-products--section h2 {
-		margin-bottom: 64px;
-		margin-bottom: var(--space-3xl);
-	}
-.featured-products--section > .featured-products--wrapper {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 40px;
-		grid-gap: 40px;
-		grid-gap: var(--space-2xl);
-		gap: var(--space-2xl);
-	}
-.featured-products--section > .featured-products--wrapper > .featured-products--card > img {
-				margin-bottom: 16px;
-				margin-bottom: var(--space-md);
-				width: 100%;
-				height: auto;
-			}

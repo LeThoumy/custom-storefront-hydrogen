@@ -1,0 +1,17 @@
+
+.aboveFold {
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+h1 {
+	font-size: var(--fsz-3xl);
+	font-weight: 500;
+}
+@media (max-width: 660px) {
+	h1 {
+		font-size: var(--fsz-2xl);
+	}
+}

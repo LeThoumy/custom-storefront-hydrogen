@@ -1,0 +1,31 @@
+.saleLabel {
+	font-family: garnett;
+	position: absolute;
+	transform: translateY(-100%);
+	background-color: var(--yellow80);
+	color: var(--yellow20);
+	padding: var(--space-xs) var(--space-sm);
+}
+.productImage {
+	width: 100%;
+	opacity: 50%;
+	height: auto;
+}
+
+.productInfo_container {
+	margin-top: var(--space-md);
+	font-size: smaller;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.price_container {
+	margin-top: var(--space-2xs);
+	font-family: garnett;
+	display: flex;
+	gap: var(--space-md);
+}
+.price {
+	opacity: 87%;
+	text-decoration: line-through;
+}

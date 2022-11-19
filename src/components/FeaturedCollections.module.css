@@ -1,0 +1,14 @@
+.collections_wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: var(--space-2xl);
+}
+.title {
+	margin-bottom: var(--space-3xl);
+}
+.collection_image {
+	margin-bottom: var(--space-md);
+	width: 100%;
+	height: auto;
+	opacity: 50%;
+}

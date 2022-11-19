@@ -1,0 +1,9 @@
+.collectionDescription {
+	font-size: var(--fsz-md);
+	font-weight: 400;
+}
+.productList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: var(--space-3xl);
+}

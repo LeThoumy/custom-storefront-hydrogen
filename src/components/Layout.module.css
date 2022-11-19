@@ -1,0 +1,23 @@
+.nav_container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	--py: var(--space-2xl);
+	--px: var(--space-xl);
+	width: calc(100vw - 2 * (var(--px)));
+	height: calc(100px - 2 * (var(--py)));
+	padding: var(--py) var(--px);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--yellow80);
+	z-index: 2;
+}
+.navLink {
+	font-family: garnett;
+	color: var(--yellow98);
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 500;
+}
